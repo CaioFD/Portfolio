@@ -288,7 +288,7 @@ span{
     color: black;
 }
 /* FOOTER DO CONTACT */
-.footer-contact{
+.footer-black{
     position: relative;
     bottom: 0;
     width: 100%;
@@ -296,13 +296,13 @@ span{
     background-color: black;
 }
 
-.footer-contact .social{
+.footer-black .social{
     text-align: center;
     padding-bottom: 25px;
     color: white;
 }
 
-.footer-contact .social a{ 
+.footer-black .social a{ 
     font-size: 24px;
     color: white;
     border: 2px solid orangered;
@@ -316,13 +316,13 @@ span{
     transition: 0.3s ease;
 }
 
-.footer-contact .social a:hover{
+.footer-black .social a:hover{
     transform: scale(1.2)translateY(-10px);
     color: orangered;
     border: 2px solid orangered;
 }
 
-.footer-contact ul{
+.footer-black ul{
     margin-top: 0;
     padding: 0;
     font-size: 18px;
@@ -331,22 +331,22 @@ span{
     text-align: center;
 }
 
-.footer-contact ul li a{
+.footer-black ul li a{
     color: white;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
 
-.footer-contact ul li a:hover{
+.footer-black ul li a:hover{
     border-bottom: 3px solid orangered;
 }
 
-.footer-contact ul li{
+.footer-black ul li{
     display: inline-block;
     padding: 0 15px;
 }
 
-.footer-contact .copyright{
+.footer-black .copyright{
     margin-top: 15px;
     text-align: center;
     font-size: 12px;
@@ -397,4 +397,57 @@ span{
     margin-top: 1em;
     font-weight: bold;
     color: orangered;
+}
+
+.educacao {
+    min-height: 100vh;
+    background: #f1f1f1;
+    padding: 12% 8%;
+    text-align: center;
+}
+
+.educacao .heading {
+    font-size: 42px;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.educacao-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.educacao-box {
+    background: white;
+    border: 2px solid orangered;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.educacao-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px orangered;
+}
+
+.educacao-box i {
+    font-size: 50px;
+    color: orangered;
+    margin-bottom: 1rem;
+}
+
+.educacao-box h3 {
+    font-size: 22px;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.educacao-box p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
 }

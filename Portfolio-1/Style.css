@@ -352,3 +352,49 @@ span{
     font-size: 12px;
     color: white;
 }
+
+
+.experiencias {
+    padding: 12% 8%;
+    background-color: rgb(241, 241, 241);
+}
+
+.experiencias .heading {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 2em;
+}
+
+.experiencia-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experiencia {
+    background-color: white;
+    padding: 2em;
+    border-left: 8px solid orangered;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.experiencia h3 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 0.5em;
+}
+
+.experiencia p {
+    font-size: 18px;
+    color: #333;
+}
+
+.experiencia .tempo {
+    display: inline-block;
+    margin-top: 1em;
+    font-weight: bold;
+    color: orangered;
+}

@@ -6,7 +6,7 @@ Olá! Este repositório é um espaço onde compartilho minhas ideias, desafios e
 Sou um estudante de Ciência da Computação apaixonado por aprender, criar e resolver problemas. Minha jornada envolve explorar diversas áreas da tecnologia, sempre em busca de inovação e impacto.
 
  Ferramentas e Tecnologias:
-- Linguagens: Java, C, C++, JavaScript
+- Linguagens: Python,Java, Golang, C, C++, JavaScript
 - Desenvolvimento web: Html, Css
 - Ferramentas: Git
 - Áreas de Interesse: Desenvolvimento de Software, Sistemas Digitais, Inteligência Artificial

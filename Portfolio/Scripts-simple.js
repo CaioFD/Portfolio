@@ -1,4 +1,4 @@
-// Aguarda o carregamento completo da página
+// Versão alternativa - usando abordagem mais simples
 document.addEventListener("DOMContentLoaded", function () {
   // Inicie o EmailJS com seu User ID
   emailjs.init("WWfcMwdLgkTVrn3Rp");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Impede o envio tradicional do formulário
+      event.preventDefault();
 
       const submitBtn = document.getElementById("submit-btn");
       const loading = document.getElementById("loading");
@@ -19,31 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("message").value.trim();
 
       if (!name || !email || !message) {
-        alert(
-          "Por favor, preencha todos os campos obrigatórios (Nome, Email e Mensagem)."
-        );
+        alert("Por favor, preencha todos os campos obrigatórios.");
         return;
       }
 
-      // Validação de email
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert("Por favor, insira um email válido.");
-        return;
-      }
-
-      // Mostrar loading e desabilitar botão
+      // Mostrar loading
       submitBtn.disabled = true;
       submitBtn.value = "Enviando...";
       if (loading) loading.style.display = "block";
 
-      console.log("Enviando formulário...");
-      console.log("Service ID: service_ymv8p1n");
-      console.log("Template ID: template_dj9qhxj");
-
-      // Aguardar um momento para evitar rate limiting
+      // Aguardar um pouco para evitar rate limiting
       setTimeout(() => {
-        // Enviar usando sendForm (método mais confiável)
+        // Enviar usando sendForm diretamente
         emailjs
           .sendForm("service_ymv8p1n", "template_dj9qhxj", contactForm)
           .then(
@@ -57,40 +44,33 @@ document.addEventListener("DOMContentLoaded", function () {
             function (error) {
               console.log("FAILED...", error);
 
-              let errorMessage = "Erro ao enviar a mensagem. ";
-
               if (error.status === 418) {
-                errorMessage =
-                  "Servidor temporariamente indisponível. Aguarde alguns minutos e tente novamente.";
+                alert(
+                  "Servidor temporariamente indisponível. Aguarde 5 minutos e tente novamente."
+                );
               } else if (error.status === 429) {
-                errorMessage =
-                  "Muitas tentativas. Aguarde alguns minutos e tente novamente.";
-              } else if (error.status === 400) {
-                errorMessage =
-                  "Problema na configuração. Verifique se todos os campos estão preenchidos.";
-              } else if (error.status === 401) {
-                errorMessage =
-                  "Erro de autorização. Entre em contato pelo email: caiodiniz200204@gmail.com";
+                alert(
+                  "Muitas tentativas. Aguarde alguns minutos e tente novamente."
+                );
               } else {
-                errorMessage = `Erro ${
-                  error.status || "desconhecido"
-                }. Entre em contato diretamente: caiodiniz200204@gmail.com`;
+                alert(
+                  `Erro ${error.status}: ${
+                    error.text || "Tente novamente em alguns minutos."
+                  }`
+                );
               }
-
-              alert(errorMessage);
             }
           )
           .finally(function () {
-            // Restaurar estado do botão
             submitBtn.disabled = false;
             submitBtn.value = "Enviar Mensagem";
             if (loading) loading.style.display = "none";
           });
-      }, 1500); // Aguardar 1.5 segundos antes de enviar
+      }, 1000); // Aguardar 1 segundo antes de enviar
     });
   }
 
-  // Adicionar funcionalidade aos botões "Contate-me" em outras páginas
+  // Funcionalidade dos botões "Contate-me"
   const contactButtons = document.querySelectorAll(".button-1");
   contactButtons.forEach((button) => {
     if (button.textContent.trim() === "Contate-me") {

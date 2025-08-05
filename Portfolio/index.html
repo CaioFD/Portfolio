@@ -13,7 +13,11 @@
         type="text/javascript"
         src="https://cdn.emailjs.com/dist/email.min.js"
         ></script>
-        <script type="text/javascript" src="Script/Scripts.js" defer></script>
+        <script
+        type="text/javascript"
+        src="Script/Scripts-responsive.js"
+        defer
+        ></script>
     </head>
     <body>
         <header class="header">
@@ -25,6 +29,12 @@
             <a href="Pages/Projetos.html">Projetos</a>
             <a href="Pages/Educacao.html">Educação</a>
         </nav>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <a href="Pages/Contacte.html" class="contato">Contate-me</a>
         </header>
@@ -47,7 +57,7 @@
 
             <div class="button-box">
             <button class="button-1">Contate-me</button>
-            <button class="button-2">Experiência</button>
+            <a href="Pages/Experiencias.html" class="button-2">Experiência</a>
             </div>
         </div>
 

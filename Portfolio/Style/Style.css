@@ -459,3 +459,335 @@ span {
   color: #444;
   line-height: 1.5;
 }
+
+/* ========== RESPONSIVIDADE MOBILE ========== */
+
+/* Menu Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  color: white;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Media Queries para Responsividade */
+
+/* Tablets e telas pequenas (até 1024px) */
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 20px 5%;
+  }
+
+  .home {
+    gap: 3em;
+    padding: 100px 5% 0;
+  }
+
+  .about {
+    gap: 5em;
+    padding: 8% 5%;
+  }
+
+  .img-box img {
+    width: 400px;
+  }
+
+  .about-img img {
+    width: 450px;
+  }
+}
+
+/* Tablets pequenos (até 768px) */
+@media screen and (max-width: 768px) {
+  /* Header responsivo */
+  .header {
+    padding: 15px 4%;
+    flex-wrap: wrap;
+  }
+
+  .nav-bar {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .nav-bar.active {
+    display: flex;
+  }
+
+  .nav-bar a {
+    margin: 10px 0;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .contato {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  /* Seção Home */
+  .home {
+    flex-direction: column;
+    gap: 2em;
+    padding: 120px 4% 0;
+    text-align: center;
+  }
+
+  .home-content h3 {
+    font-size: 32px;
+  }
+
+  .home-content h1 {
+    font-size: 45px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+    margin: 20px 0 25px;
+  }
+
+  .button-box {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .button-1,
+  .button-2 {
+    padding: 12px 20px;
+    font-size: 16px;
+    min-width: 140px;
+  }
+
+  .img-box img {
+    width: 300px;
+  }
+
+  /* Seção About */
+  .about {
+    flex-direction: column;
+    gap: 3em;
+    padding: 8% 4%;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .about-content h3 {
+    font-size: 45px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    margin: 1.5em 0 2em;
+  }
+
+  /* Formulário de contato */
+  .contact-form {
+    padding: 0 4%;
+  }
+
+  .contact-form h2 {
+    font-size: 28px;
+    margin-top: 120px;
+  }
+
+  .contact-form form .input-box {
+    flex-direction: column;
+  }
+
+  .contact-form form .input-box input {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Seções de experiência e educação */
+  .experiencias,
+  .educacao {
+    padding: 120px 4% 50px;
+  }
+
+  .experiencias .heading,
+  .educacao .heading {
+    font-size: 32px;
+  }
+
+  .educacao-container {
+    gap: 1.5rem;
+  }
+
+  .educacao-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Footer */
+  .footer,
+  .footer-black {
+    padding: 30px 4%;
+  }
+
+  .footer ul li,
+  .footer-black ul li {
+    display: block;
+    padding: 5px 0;
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 10px 3%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .contato {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  .home {
+    padding: 100px 3% 0;
+  }
+
+  .home-content h3 {
+    font-size: 28px;
+  }
+
+  .home-content h1 {
+    font-size: 35px;
+  }
+
+  .home-content p {
+    font-size: 14px;
+  }
+
+  .button-1,
+  .button-2 {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+
+  .img-box img {
+    width: 250px;
+  }
+
+  .about {
+    padding: 6% 3%;
+  }
+
+  .about-img img {
+    width: 250px;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .about-content h3 {
+    font-size: 35px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+  }
+
+  .contact-form {
+    padding: 0 3%;
+  }
+
+  .contact-form h2 {
+    font-size: 24px;
+  }
+
+  .contact-form form .input-box input,
+  .contact-form form textarea {
+    padding: 1rem;
+    font-size: 16px;
+  }
+
+  .experiencias,
+  .educacao {
+    padding: 100px 3% 40px;
+  }
+
+  .experiencias .heading,
+  .educacao .heading {
+    font-size: 28px;
+  }
+
+  .experiencia {
+    padding: 1.5em;
+  }
+
+  .experiencia h3 {
+    font-size: 20px;
+  }
+
+  .experiencia p {
+    font-size: 16px;
+  }
+
+  .educacao-box {
+    padding: 1.5rem;
+  }
+
+  .educacao-box h3 {
+    font-size: 20px;
+  }
+
+  .educacao-box p {
+    font-size: 14px;
+  }
+
+  .footer .social a,
+  .footer-black .social a {
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+  }
+}

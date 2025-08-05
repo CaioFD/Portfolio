@@ -1,64 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projetos</title>
-    <link rel="stylesheet" href="../Style/Style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
+    <link rel="stylesheet" href="../Style/Style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="../Script/Scripts-responsive.js"
+      defer
+    ></script>
+  </head>
+  <body>
     <header class="header">
-        <a href="../index.html" class="logo"><span>Caio</span>Diniz</a>
-        <nav class="nav-bar">
-            <a href="../index.html">Portfólio</a>
-            <a href="../Pages/Experiencias.html">Experiências</a>
-            <a href="#" class="ativo">Projetos</a>
-            <a href="../Pages/Educacao.html">Educação</a>
-        </nav>
-        <a href="../Pages/Contacte.html" class="contato">Contate-me</a>
+      <a href="../index.html" class="logo"><span>Caio</span>Diniz</a>
+      <nav class="nav-bar">
+        <a href="../index.html">Portfólio</a>
+        <a href="../Pages/Experiencias.html">Experiências</a>
+        <a href="#" class="ativo">Projetos</a>
+        <a href="../Pages/Educacao.html">Educação</a>
+      </nav>
+
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <a href="../Pages/Contacte.html" class="contato">Contate-me</a>
     </header>
 
     <section class="experiencias">
-        <h2 class="heading">Meus <span>Projetos</span></h2>
-        <div class="educacao-container">
-            <a href="https://github.com/ICEI-PUC-Minas-PMGCC-TI/tiaw-pmg-cc-t-20222-01-procurar-pessoas-para-esportes" class="educacao-box" target="_blank">
-                <i class='bx bx-code-alt'></i>
-                <h3>TI1-GoPlay:</h3>
-                <p>Projeto Web feito para encontrar pessoas com os mesmos interesses esportivos, para que possamos conectar as pessoas com as mesmas predileções.</p>
-            </a>
-            <a href="https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2024-1-g02-movesmart" class="educacao-box" target="_blank">
-                <i class='bx bx-code-alt'></i>
-                <h3>TI2-MoveSmart:</h3>
-                <p>Projeto web buscando aprimorar da experiência do usuário no transporte público, com foco em desenvolvimento do back-end..</p>
-            </a>
-            <a href="https://github.com/vinimiraa/LDDM-ShowCoin" class="educacao-box" target="_blank">
-                <i class='bx bx-code-alt'></i>
-                <h3>LDDM-ShowCoin:</h3>
-                <p>Projeto de Dispositovos Móveis onde você pode gerenciar suas finanças de forma prática e automatizada com escaneamento de notas fiscais e controle inteligente de gastos.</p>
-            </a>
-            <a href="https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti4-2025-1-g03-echoes-of-eldra" class="educacao-box" target="_blank">
-                <i class='bx bx-code-alt'></i>
-                <h3>TI4-Echoes of Eldra:</h3>
-                <p>Projeto do jogo Echoes of Eldra, um roguelike tático com IA adaptativa e labirintos gerados proceduralmente.</p>
-            </a>
-        </div>
+      <h2 class="heading">Meus <span>Projetos</span></h2>
+      <div class="educacao-container">
+        <a
+          href="https://github.com/ICEI-PUC-Minas-PMGCC-TI/tiaw-pmg-cc-t-20222-01-procurar-pessoas-para-esportes"
+          class="educacao-box"
+          target="_blank"
+        >
+          <i class="bx bx-code-alt"></i>
+          <h3>TI1-GoPlay:</h3>
+          <p>
+            Projeto Web feito para encontrar pessoas com os mesmos interesses
+            esportivos, para que possamos conectar as pessoas com as mesmas
+            predileções.
+          </p>
+        </a>
+        <a
+          href="https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2024-1-g02-movesmart"
+          class="educacao-box"
+          target="_blank"
+        >
+          <i class="bx bx-code-alt"></i>
+          <h3>TI2-MoveSmart:</h3>
+          <p>
+            Projeto web buscando aprimorar da experiência do usuário no
+            transporte público, com foco em desenvolvimento do back-end..
+          </p>
+        </a>
+        <a
+          href="https://github.com/vinimiraa/LDDM-ShowCoin"
+          class="educacao-box"
+          target="_blank"
+        >
+          <i class="bx bx-code-alt"></i>
+          <h3>LDDM-ShowCoin:</h3>
+          <p>
+            Projeto de Dispositovos Móveis onde você pode gerenciar suas
+            finanças de forma prática e automatizada com escaneamento de notas
+            fiscais e controle inteligente de gastos.
+          </p>
+        </a>
+        <a
+          href="https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti4-2025-1-g03-echoes-of-eldra"
+          class="educacao-box"
+          target="_blank"
+        >
+          <i class="bx bx-code-alt"></i>
+          <h3>TI4-Echoes of Eldra:</h3>
+          <p>
+            Projeto do jogo Echoes of Eldra, um roguelike tático com IA
+            adaptativa e labirintos gerados proceduralmente.
+          </p>
+        </a>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.instagram.com/caiofd13/"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="https://www.linkedin.com/in/caiofdiniz/"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://github.com/CaioFD"><i class='bx bxl-github'></i></a>
-        </div>
-        <ul class="list">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Sobre mim</a></li>
-            <li><a href="#">Contato</a></li>
-            <li><a href="#">Política de Privacidade</a></li>
-        </ul>
-        <p class="copyright">@ 2025 Caio | Todos os direitos reservados</p>
+    <footer class="footer-black">
+      <div class="social">
+        <a href="https://www.instagram.com/caiofd13/"
+          ><i class="bx bxl-instagram-alt"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/caiofdiniz/"
+          ><i class="bx bxl-linkedin-square"></i
+        ></a>
+        <a href="https://github.com/CaioFD"><i class="bx bxl-github"></i></a>
+      </div>
+      <ul class="list">
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Sobre mim</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+      </ul>
+      <p class="copyright">@ 2025 Caio | Todos os direitos reservados</p>
     </footer>
-</body>
+  </body>
 </html>

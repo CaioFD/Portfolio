@@ -1,9 +1,9 @@
-// Versão alternativa - usando abordagem mais simples
+// Alternative version using a simpler approach
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicie o EmailJS com seu User ID
+  // Initialize EmailJS with your user ID
   emailjs.init("WWfcMwdLgkTVrn3Rp");
 
-  // Função que lida com o envio do formulário
+  // Handle form submission
   const contactForm = document.getElementById("contact-form");
 
   if (contactForm) {
@@ -13,31 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
       const submitBtn = document.getElementById("submit-btn");
       const loading = document.getElementById("loading");
 
-      // Validação básica
+      // Basic validation
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
 
       if (!name || !email || !message) {
-        alert("Por favor, preencha todos os campos obrigatórios.");
+        alert("Please fill in all required fields.");
         return;
       }
 
-      // Mostrar loading
+      // Show loading state
       submitBtn.disabled = true;
-      submitBtn.value = "Enviando...";
+      submitBtn.value = "Sending...";
       if (loading) loading.style.display = "block";
 
-      // Aguardar um pouco para evitar rate limiting
+      // Wait briefly to avoid rate limiting
       setTimeout(() => {
-        // Enviar usando sendForm diretamente
+        // Submit directly using sendForm
         emailjs
           .sendForm("service_ymv8p1n", "template_dj9qhxj", contactForm)
           .then(
             function (response) {
               console.log("SUCCESS!", response.status, response.text);
               alert(
-                "Mensagem enviada com sucesso! Entrarei em contato em breve."
+                "Message sent successfully! I'll be in touch soon."
               );
               contactForm.reset();
             },
@@ -46,16 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
               if (error.status === 418) {
                 alert(
-                  "Servidor temporariamente indisponível. Aguarde 5 minutos e tente novamente."
+                  "The server is temporarily unavailable. Please wait 5 minutes and try again."
                 );
               } else if (error.status === 429) {
                 alert(
-                  "Muitas tentativas. Aguarde alguns minutos e tente novamente."
+                  "Too many attempts. Please wait a few minutes and try again."
                 );
               } else {
                 alert(
-                  `Erro ${error.status}: ${
-                    error.text || "Tente novamente em alguns minutos."
+                  `Error ${error.status}: ${
+                    error.text || "Please try again in a few minutes."
                   }`
                 );
               }
@@ -63,17 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
           )
           .finally(function () {
             submitBtn.disabled = false;
-            submitBtn.value = "Enviar Mensagem";
+            submitBtn.value = "Send Message";
             if (loading) loading.style.display = "none";
           });
-      }, 1000); // Aguardar 1 segundo antes de enviar
+      }, 1000); // Wait 1 second before submitting
     });
   }
 
-  // Funcionalidade dos botões "Contate-me"
+  // Add behavior to "Contact me" buttons
   const contactButtons = document.querySelectorAll(".button-1");
   contactButtons.forEach((button) => {
-    if (button.textContent.trim() === "Contate-me") {
+    if (button.textContent.trim() === "Contact me") {
       button.addEventListener("click", function (e) {
         e.preventDefault();
         window.location.href = "Contacte.html";

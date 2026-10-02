@@ -400,6 +400,19 @@ span {
   color: #333;
 }
 
+.experiencia .responsabilidades {
+  margin-top: 1em;
+  padding-left: 1.5em;
+  list-style: disc;
+  font-size: 18px;
+  color: #333;
+}
+
+.experiencia .responsabilidades li {
+  margin-bottom: 0.5em;
+  list-style: disc;
+}
+
 .experiencia .tempo {
   display: inline-block;
   margin-top: 1em;
@@ -491,9 +504,9 @@ span {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Media Queries para Responsividade */
+/* Responsive media queries */
 
-/* Tablets e telas pequenas (até 1024px) */
+/* Tablets and small screens (up to 1024px) */
 @media screen and (max-width: 1024px) {
   .header {
     padding: 20px 5%;
@@ -518,9 +531,9 @@ span {
   }
 }
 
-/* Tablets pequenos (até 768px) */
+/* Small tablets (up to 768px) */
 @media screen and (max-width: 768px) {
-  /* Header responsivo */
+  /* Responsive header */
   .header {
     padding: 15px 4%;
     flex-wrap: wrap;
@@ -556,7 +569,7 @@ span {
     font-size: 14px;
   }
 
-  /* Seção Home */
+  /* Home section */
   .home {
     flex-direction: column;
     gap: 2em;
@@ -595,7 +608,7 @@ span {
     width: 300px;
   }
 
-  /* Seção About */
+  /* About section */
   .about {
     flex-direction: column;
     gap: 3em;
@@ -621,7 +634,7 @@ span {
     margin: 1.5em 0 2em;
   }
 
-  /* Formulário de contato */
+  /* Contact form */
   .contact-form {
     padding: 0 4%;
   }
@@ -640,7 +653,7 @@ span {
     margin: 0.5rem 0;
   }
 
-  /* Seções de experiência e educação */
+  /* Experience and education sections */
   .experiencias,
   .educacao {
     padding: 120px 4% 50px;
@@ -673,7 +686,7 @@ span {
   }
 }
 
-/* Mobile pequeno (até 480px) */
+/* Small mobile screens (up to 480px) */
 @media screen and (max-width: 480px) {
   .header {
     padding: 10px 3%;

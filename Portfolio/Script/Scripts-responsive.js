@@ -1,7 +1,9 @@
 // Wait for the page to finish loading
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize EmailJS with your user ID
-  emailjs.init("WWfcMwdLgkTVrn3Rp");
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("WWfcMwdLgkTVrn3Rp");
+  }
 
   // Handle form submission
   const contactForm = document.getElementById("contact-form");

@@ -189,6 +189,104 @@ span {
   margin: 2em 0 3em;
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: white;
+  border: 2px solid orangered;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px orangered;
+}
+
+.skill-card > i {
+  font-size: 36px;
+  color: orangered;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card h3,
+.skill-card h5 {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.65rem;
+  color: #333;
+  background: #f1f1f1;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.skill-tag.featured {
+  color: white;
+  background: orangered;
+  font-weight: 700;
+}
+
+.skill-card p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.technical-skills {
+  min-height: 100vh;
+  padding: 12% 8%;
+  background: rgb(241, 241, 241);
+  text-align: center;
+}
+
+.technical-skills .heading {
+  margin-bottom: 1rem;
+  font-size: 42px;
+}
+
+.technical-skills-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.technical-skills .skills-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.technical-skills .skill-card {
+  text-align: left;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .contact-form h2 {
   text-align: center;
   margin-top: 3em;
@@ -634,6 +732,26 @@ span {
     margin: 1.5em 0 2em;
   }
 
+  .technical-skills {
+    padding: 120px 4% 50px;
+  }
+
+  .technical-skills .heading {
+    font-size: 32px;
+  }
+
+  .technical-skills-intro {
+    font-size: 16px;
+  }
+
+  .technical-skills .skills-grid {
+    gap: 1rem;
+  }
+
+  .about-links {
+    justify-content: center;
+  }
+
   /* Contact form */
   .contact-form {
     padding: 0 4%;
@@ -746,6 +864,18 @@ span {
 
   .about-content p {
     font-size: 14px;
+  }
+
+  .technical-skills {
+    padding: 100px 3% 40px;
+  }
+
+  .technical-skills .heading {
+    font-size: 28px;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
   }
 
   .contact-form {

@@ -1,0 +1,21 @@
+<section class="experiencias">
+  <h2 class="heading">My <span>Experience</span></h2>
+
+  <div class="experiencia-box">
+    @for (exp of experiences; track exp.title + exp.company) {
+      <div class="experiencia">
+        <h3>{{ exp.title }}</h3>
+        <p><strong>{{ exp.company }}</strong> · {{ exp.type }}</p>
+        <p>{{ exp.location }}</p>
+        <ul class="responsabilidades">
+          @for (item of exp.responsibilities; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+        <span class="tempo">{{ exp.period }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<app-footer />

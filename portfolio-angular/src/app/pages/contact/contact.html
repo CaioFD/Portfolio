@@ -1,0 +1,68 @@
+<section class="contact-form">
+  <h2 class="contact-me">Contact <span>Me</span></h2>
+
+  <form #contactForm (ngSubmit)="onSubmit()">
+    <div class="input-box">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Full Name"
+        required
+        [(ngModel)]="name"
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        required
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="input-box">
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        placeholder="Phone Number"
+        required
+        [(ngModel)]="phone"
+      />
+      <input
+        type="text"
+        name="subject"
+        id="subject"
+        placeholder="Subject"
+        required
+        [(ngModel)]="subject"
+      />
+    </div>
+
+    <textarea
+      name="message"
+      id="message"
+      cols="30"
+      rows="10"
+      placeholder="Your Message"
+      required
+      [(ngModel)]="message"
+    ></textarea>
+    <input
+      type="submit"
+      [value]="sending() ? 'Sending...' : 'Send Message'"
+      class="button-1"
+      id="submit-btn"
+      [disabled]="sending()"
+    />
+  </form>
+
+  @if (sending()) {
+    <div id="loading">
+      <p>Sending message...</p>
+    </div>
+  }
+</section>
+
+<app-footer />

@@ -1,0 +1,10 @@
+<article class="skill-card">
+  <i [class]="icon()" aria-hidden="true"></i>
+  <h3>{{ title() }}</h3>
+  <div class="skill-tags">
+    @for (tag of tags(); track tag.label) {
+      <span class="skill-tag" [class.featured]="tag.featured">{{ tag.label }}</span>
+    }
+  </div>
+  <p>{{ description() }}</p>
+</article>

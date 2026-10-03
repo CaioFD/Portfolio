@@ -1,0 +1,15 @@
+<section class="educacao">
+  <h2 class="heading">My <span>Education</span></h2>
+
+  <div class="educacao-container">
+    @for (item of education; track item.title) {
+      <app-info-card
+        icon="bx bxs-graduation"
+        [title]="item.title"
+        [lines]="[item.institution, item.period, item.status]"
+      />
+    }
+  </div>
+</section>
+
+<app-footer />

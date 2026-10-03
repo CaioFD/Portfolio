@@ -1,0 +1,17 @@
+<ng-template #content>
+  <i [class]="icon()"></i>
+  <h3>{{ title() }}</h3>
+  @for (line of lines(); track line) {
+    <p>{{ line }}</p>
+  }
+</ng-template>
+
+@if (href()) {
+  <a [href]="href()" class="educacao-box" target="_blank" rel="noopener noreferrer">
+    <ng-container [ngTemplateOutlet]="content" />
+  </a>
+} @else {
+  <div class="educacao-box">
+    <ng-container [ngTemplateOutlet]="content" />
+  </div>
+}

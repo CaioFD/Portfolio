@@ -69,6 +69,31 @@ span {
   transition: 0.3s ease;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  padding: 8px 14px;
+  background: transparent;
+  color: white;
+  border: 2px solid orangered;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background-color: orangered;
+  color: white;
+  box-shadow: 0 0 15px orangered;
+}
+
 .contato:hover {
   background-color: orangered;
   box-shadow: 0 0 25px orangered;
@@ -672,6 +697,15 @@ span {
     font-size: 14px;
   }
 
+  .lang-toggle {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .header-actions {
+    gap: 0.6rem;
+  }
+
   /* Home section */
   .home {
     flex-direction: column;
@@ -822,6 +856,11 @@ span {
   .contato {
     padding: 6px 15px;
     font-size: 12px;
+  }
+
+  .lang-toggle {
+    padding: 5px 10px;
+    font-size: 11px;
   }
 
   .home {

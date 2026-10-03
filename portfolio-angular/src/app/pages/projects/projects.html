@@ -1,7 +1,7 @@
 <section class="experiencias">
-  <h2 class="heading">My <span>Projects</span></h2>
+  <h2 class="heading">{{ content().heading }} <span>{{ content().headingSpan }}</span></h2>
   <div class="educacao-container">
-    @for (project of projects; track project.url) {
+    @for (project of content().projects; track project.url) {
       <app-info-card
         icon="bx bx-code-alt"
         [title]="project.title"

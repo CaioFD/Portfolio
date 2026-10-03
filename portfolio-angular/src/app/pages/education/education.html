@@ -1,8 +1,8 @@
 <section class="educacao">
-  <h2 class="heading">My <span>Education</span></h2>
+  <h2 class="heading">{{ content().heading }} <span>{{ content().headingSpan }}</span></h2>
 
   <div class="educacao-container">
-    @for (item of education; track item.title) {
+    @for (item of content().education; track item.title) {
       <app-info-card
         icon="bx bxs-graduation"
         [title]="item.title"

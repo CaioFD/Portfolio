@@ -1,8 +1,8 @@
 <section class="experiencias">
-  <h2 class="heading">My <span>Experience</span></h2>
+  <h2 class="heading">{{ content().heading }} <span>{{ content().headingSpan }}</span></h2>
 
   <div class="experiencia-box">
-    @for (exp of experiences; track exp.title + exp.company) {
+    @for (exp of content().experiences; track exp.title + exp.company) {
       <div class="experiencia">
         <h3>{{ exp.title }}</h3>
         <p><strong>{{ exp.company }}</strong> · {{ exp.type }}</p>

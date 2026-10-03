@@ -12,8 +12,8 @@
   </div>
 
   <ul class="list">
-    <li><a routerLink="/">About me</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/">{{ content().aboutMe }}</a></li>
+    <li><a routerLink="/contact">{{ content().contact }}</a></li>
   </ul>
-  <p class="copyright">&#64; {{ year }} Caio | All rights reserved</p>
+  <p class="copyright">&#64; {{ year }} Caio | {{ content().rights }}</p>
 </footer>

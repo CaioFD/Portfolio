@@ -2,18 +2,29 @@
   <a routerLink="/" class="logo" (click)="closeMenu()"><span>Caio</span>Diniz</a>
 
   <nav class="nav-bar" [class.active]="menuOpen()">
-    <a routerLink="/" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Portfolio</a>
-    <a routerLink="/experience" routerLinkActive="ativo" (click)="closeMenu()">Experience</a>
-    <a routerLink="/projects" routerLinkActive="ativo" (click)="closeMenu()">Projects</a>
-    <a routerLink="/technical-skills" routerLinkActive="ativo" (click)="closeMenu()">Technical Skills</a>
-    <a routerLink="/education" routerLinkActive="ativo" (click)="closeMenu()">Education</a>
+    <a routerLink="/" routerLinkActive="ativo" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ content().portfolio }}</a>
+    <a routerLink="/experience" routerLinkActive="ativo" (click)="closeMenu()">{{ content().experience }}</a>
+    <a routerLink="/projects" routerLinkActive="ativo" (click)="closeMenu()">{{ content().projects }}</a>
+    <a routerLink="/technical-skills" routerLinkActive="ativo" (click)="closeMenu()">{{ content().technicalSkills }}</a>
+    <a routerLink="/education" routerLinkActive="ativo" (click)="closeMenu()">{{ content().education }}</a>
   </nav>
 
-  <div class="menu-toggle" [class.active]="menuOpen()" (click)="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <div class="header-actions">
+    <button
+      type="button"
+      class="lang-toggle"
+      (click)="toggleLanguage()"
+      [attr.aria-label]="'Switch language'"
+    >
+      {{ lang() === 'en' ? 'PT' : 'EN' }}
+    </button>
 
-  <a routerLink="/contact" class="contato" (click)="closeMenu()">Contact me</a>
+    <div class="menu-toggle" [class.active]="menuOpen()" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a routerLink="/contact" class="contato" (click)="closeMenu()">{{ content().contactMe }}</a>
+  </div>
 </header>

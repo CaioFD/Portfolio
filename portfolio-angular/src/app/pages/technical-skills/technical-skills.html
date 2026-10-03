@@ -1,12 +1,9 @@
 <main class="technical-skills">
-  <h2 class="heading">Technical <span>Skills</span></h2>
-  <p class="technical-skills-intro">
-    Technologies and areas I have worked with, with emphasis on my
-    professional experience and applied projects.
-  </p>
+  <h2 class="heading">{{ content().heading }} <span>{{ content().headingSpan }}</span></h2>
+  <p class="technical-skills-intro">{{ content().intro }}</p>
 
   <section class="skills-grid" aria-label="Technical skills by area">
-    @for (skill of skills; track skill.title) {
+    @for (skill of content().skills; track skill.title) {
       <app-skill-card
         [icon]="skill.icon"
         [title]="skill.title"

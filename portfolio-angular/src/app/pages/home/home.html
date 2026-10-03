@@ -1,22 +1,17 @@
 <section class="home">
   <div class="home-content">
-    <h3>Hello,</h3>
+    <h3>{{ content().hello }}</h3>
 
     <h1>
-      My name is<span> Caio Diniz<br /></span>I'm a full-stack Developer
+      {{ content().namePrefix }}<span> {{ content().name }}<br /></span>{{ content().role }}
     </h1>
 
-    <p>
-      Welcome to my portfolio! Here you'll find a collection of my latest
-      and most challenging projects, driven by my passion for technology,
-      innovation, and development. Focused on practical and creative
-      solutions, each project reflects my commitment to excellence and
-      continuous improvement.
-    </p>
+    <p>{{ content().intro }}</p>
 
     <div class="button-box">
-      <a routerLink="/contact" class="button-1">Contact me</a>
-      <a routerLink="/experience" class="button-2">Experience</a>
+      <a [href]="content().cvFile" download class="button-1">
+        <i class="bx bx-download"></i> {{ content().downloadCv }}
+      </a>
     </div>
   </div>
 
@@ -31,33 +26,14 @@
   </div>
 
   <div class="about-content">
-    <h2 class="heading">About <span>Me</span></h2>
-    <h3>Full-stack <span>Developer</span></h3>
-    <p>
-      I am a Computer Science student passionate about technology,
-      innovation, and developing intelligent solutions. I have solid
-      programming skills in Python, Java, Go, C, and C#, as well as
-      experience with full-stack, web, and mobile development (Flutter and
-      Android), software development, and artificial intelligence through
-      academic projects.
-    </p>
-    <p>
-      Proactive, creative, and results-oriented, I have gained experience
-      in requirements analysis, information security fundamentals, and
-      project leadership, always focusing on teamwork and effective
-      communication.
-    </p>
-    <p>
-      I constantly strive to improve my technical and interpersonal
-      skills, with the goal of working in areas such as software
-      development, artificial intelligence, and cybersecurity. I aim to
-      contribute to challenging projects in collaborative and innovative
-      environments while continuing to grow professionally and support
-      digital transformation.
-    </p>
+    <h2 class="heading">{{ content().aboutHeading }} <span>{{ content().aboutHeadingSpan }}</span></h2>
+    <h3>{{ content().aboutSubtitle }} <span>{{ content().aboutSubtitleSpan }}</span></h3>
+    @for (paragraph of content().aboutParagraphs; track paragraph) {
+      <p>{{ paragraph }}</p>
+    }
     <div class="about-links">
-      <a routerLink="/technical-skills" class="button-2">Technical Skills</a>
-      <a routerLink="/projects" class="button-2">Projects</a>
+      <a routerLink="/technical-skills" class="button-2">{{ content().technicalSkills }}</a>
+      <a routerLink="/projects" class="button-2">{{ content().projects }}</a>
     </div>
   </div>
 </section>

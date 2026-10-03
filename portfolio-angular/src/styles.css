@@ -543,6 +543,7 @@ span {
 }
 
 .educacao-box {
+  display: block;
   background: white;
   border: 2px solid orangered;
   padding: 2rem;

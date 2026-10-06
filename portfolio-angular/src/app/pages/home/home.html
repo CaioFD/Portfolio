@@ -8,6 +8,16 @@
 
     <p>{{ content().intro }}</p>
 
+    <div class="learning-badge">
+      <span class="learning-dot" aria-hidden="true"></span>
+      <span class="learning-label">{{ content().currentlyLearning }}</span>
+      <div class="learning-tags">
+        @for (item of content().learningItems; track item) {
+          <span class="learning-tag">{{ item }}</span>
+        }
+      </div>
+    </div>
+
     <div class="button-box">
       <a [href]="content().cvFile" download class="button-1">
         <i class="bx bx-download"></i> {{ content().downloadCv }}

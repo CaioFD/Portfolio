@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
+import { SkillTag } from '../skill-card/skill-card';
 
 @Component({
   imports: [NgTemplateOutlet],
@@ -11,5 +12,6 @@ export class InfoCard {
   readonly icon = input.required<string>();
   readonly title = input.required<string>();
   readonly lines = input<string[]>([]);
+  readonly tags = input<SkillTag[]>([]);
   readonly href = input<string | null>(null);
 }

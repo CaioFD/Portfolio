@@ -1,6 +1,13 @@
 <ng-template #content>
   <i [class]="icon()"></i>
   <h3>{{ title() }}</h3>
+  @if (tags().length) {
+    <div class="skill-tags">
+      @for (tag of tags(); track tag.label) {
+        <span class="skill-tag" [class.featured]="tag.featured">{{ tag.label }}</span>
+      }
+    </div>
+  }
   @for (line of lines(); track line) {
     <p>{{ line }}</p>
   }

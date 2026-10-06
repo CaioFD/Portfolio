@@ -1,18 +1,37 @@
 <section class="experiencias">
   <h2 class="heading">{{ content().heading }} <span>{{ content().headingSpan }}</span></h2>
 
-  <div class="experiencia-box">
-    @for (exp of content().experiences; track exp.title + exp.company) {
-      <div class="experiencia">
-        <h3>{{ exp.title }}</h3>
-        <p><strong>{{ exp.company }}</strong> · {{ exp.type }}</p>
-        <p>{{ exp.location }}</p>
-        <ul class="responsabilidades">
-          @for (item of exp.responsibilities; track item) {
-            <li>{{ item }}</li>
+  <div class="timeline">
+    @for (exp of content().experiences; track exp.title + exp.company; let i = $index) {
+      <div class="timeline-item" [class.active]="expandedIndex() === i">
+        <div class="timeline-marker"></div>
+
+        <div class="timeline-card">
+          <button
+            type="button"
+            class="timeline-card-header"
+            (click)="toggle(i)"
+            [attr.aria-expanded]="expandedIndex() === i"
+          >
+            <div>
+              <h3>{{ exp.title }}</h3>
+              <p><strong>{{ exp.company }}</strong> · {{ exp.type }}</p>
+              <p class="local">{{ exp.location }}</p>
+            </div>
+            <div class="timeline-card-meta">
+              <span class="tempo">{{ exp.period }}</span>
+              <i class="bx bx-chevron-down timeline-chevron"></i>
+            </div>
+          </button>
+
+          @if (expandedIndex() === i) {
+            <ul class="responsabilidades">
+              @for (item of exp.responsibilities; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
           }
-        </ul>
-        <span class="tempo">{{ exp.period }}</span>
+        </div>
       </div>
     }
   </div>

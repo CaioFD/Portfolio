@@ -124,6 +124,60 @@ span {
   margin: 25px 0 30px;
 }
 
+.learning-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 25px;
+}
+
+.learning-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: orangered;
+  box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.6);
+  animation: learning-pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.learning-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.learning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.learning-tag {
+  padding: 0.3rem 0.7rem;
+  border: 1.5px solid orangered;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: orangered;
+  background: white;
+}
+
+@keyframes learning-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 69, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+  }
+}
+
 .button-box {
   width: 345px;
   display: flex;
@@ -500,51 +554,135 @@ span {
   margin-bottom: 2em;
 }
 
-.experiencia-box {
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
-  max-width: 1000px;
+.timeline {
+  position: relative;
+  max-width: 850px;
   margin: 0 auto;
+  padding-left: 2.5rem;
 }
 
-.experiencia {
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 69, 0, 0.35) 0,
+    rgba(255, 69, 0, 0.35) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 1.6rem;
+  left: -2.5rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid orangered;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1;
+}
+
+.timeline-item.active .timeline-marker {
+  background: orangered;
+  box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.2);
+}
+
+.timeline-card {
   background-color: white;
-  padding: 2em;
-  border-left: 8px solid orangered;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
 }
 
-.experiencia h3 {
+.timeline-item.active .timeline-card {
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
+}
+
+.timeline-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5em;
+  width: 100%;
+  padding: 2em;
+  background: none;
+  border: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.timeline-card-header h3 {
   font-size: 24px;
   color: black;
   margin-bottom: 0.5em;
 }
 
-.experiencia p {
+.timeline-card-header p {
   font-size: 18px;
   color: #333;
 }
 
-.experiencia .responsabilidades {
-  margin-top: 1em;
-  padding-left: 1.5em;
+.timeline-card-header .local {
+  font-size: 15px;
+  color: #777;
+}
+
+.timeline-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+.timeline-chevron {
+  font-size: 22px;
+  color: orangered;
+  transition: transform 0.25s ease;
+}
+
+.timeline-item.active .timeline-chevron {
+  transform: rotate(180deg);
+}
+
+.responsabilidades {
+  margin: 0 2em 2em;
+  padding: 1.25em 0 0 1.5em;
+  border-top: 1px solid #eee;
   list-style: disc;
   font-size: 18px;
   color: #333;
 }
 
-.experiencia .responsabilidades li {
+.responsabilidades li {
   margin-bottom: 0.5em;
   list-style: disc;
 }
 
-.experiencia .tempo {
+.tempo {
   display: inline-block;
-  margin-top: 1em;
   font-weight: bold;
   color: orangered;
+  white-space: nowrap;
 }
 
 .educacao {
@@ -725,6 +863,10 @@ span {
   .home-content p {
     font-size: 16px;
     margin: 20px 0 25px;
+  }
+
+  .learning-badge {
+    justify-content: center;
   }
 
   .button-box {
@@ -946,15 +1088,40 @@ span {
     font-size: 28px;
   }
 
-  .experiencia {
-    padding: 1.5em;
+  .timeline {
+    padding-left: 1.75rem;
   }
 
-  .experiencia h3 {
+  .timeline::before {
+    left: 0.3rem;
+  }
+
+  .timeline-marker {
+    left: -1.75rem;
+  }
+
+  .timeline-card-header {
+    padding: 1.5em;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+
+  .timeline-card-meta {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .responsabilidades {
+    margin: 0 1.5em 1.5em;
+  }
+
+  .timeline-card-header h3 {
     font-size: 20px;
   }
 
-  .experiencia p {
+  .timeline-card-header p {
     font-size: 16px;
   }
 

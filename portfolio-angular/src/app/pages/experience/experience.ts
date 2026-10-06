@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Footer } from '../../shared/footer/footer';
 import { LanguageService } from '../../core/i18n/language.service';
 
@@ -156,4 +156,9 @@ export class Experience {
   private readonly i18n = inject(LanguageService);
 
   readonly content = computed(() => CONTENT[this.i18n.lang()]);
+  readonly expandedIndex = signal<number | null>(0);
+
+  toggle(index: number): void {
+    this.expandedIndex.set(this.expandedIndex() === index ? null : index);
+  }
 }

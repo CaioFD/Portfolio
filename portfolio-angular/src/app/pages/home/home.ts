@@ -14,7 +14,7 @@ const CONTENT = {
     downloadCv: 'Download CV',
     cvFile: 'assets/CV-CaioDiniz-EN.pdf',
     currentlyLearning: 'Currently exploring',
-    learningItems: ['Python (refresher @ Epitech)', 'GoLang', 'Proteus & GESPLAN'],
+    learningItems: ['GoLang', 'Proteus & GESPLAN'],
     aboutHeading: 'About',
     aboutHeadingSpan: 'Me',
     aboutSubtitle: 'Full-stack',

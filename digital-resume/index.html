@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caio Faria Diniz — Digital Resume</title>
+  <meta name="description" content="Digital resume of Caio Faria Diniz, Computer Science student and developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="progress-bar" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar" aria-label="Primary">
+      <a href="#hero" class="logo">
+        <img src="assets/profile.jpg" alt="Caio Faria Diniz" class="logo-pic">
+        <span class="logo-name">Caio Diniz</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">PT</button>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <a href="assets/CV-CaioDiniz-EN.pdf" class="btn btn-ghost nav-cv-btn cv-download" download data-i18n="common.downloadCV">Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-eyebrow reveal" data-i18n="hero.eyebrow">Hello, I'm</p>
+          <h1 class="hero-title reveal">Caio Faria Diniz</h1>
+          <p class="hero-role reveal">
+            <span id="typedRole" class="typed"></span><span class="cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero-location reveal"><span id="typedLocation" class="typed"></span><span class="cursor" aria-hidden="true">|</span></p>
+          <div class="hero-actions reveal">
+            <a href="contact.html" class="btn btn-primary" data-i18n="common.getInTouch">Get in touch</a>
+            <a href="assets/CV-CaioDiniz-EN.pdf" class="btn btn-ghost cv-download" download data-i18n="common.downloadCV">Download CV</a>
+          </div>
+          <div class="hero-socials reveal">
+            <a href="https://linkedin.com/in/caiofdiniz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            <a href="https://github.com/CaioFD" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+            <a href="mailto:caiodiniz200204@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 12.5 4 6.01V6h16zM4 18V8.24l7.4 5.55a1 1 0 0 0 1.2 0L20 8.24V18H4z"/></svg></a>
+          </div>
+        </div>
+        <img src="assets/profile.jpg" alt="Caio Faria Diniz" class="hero-photo reveal">
+      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-index">01.</span> <span data-i18n="about.title">About Me</span></h2>
+        <div class="about-grid">
+          <p class="about-text reveal" data-i18n="about.paragraph1">
+            Computer Science student with a strong interest in technology, innovation, and the development
+            of intelligent and scalable solutions. Solid programming skills in Python, Java, C, C# and C++,
+            with experience in full-stack development, web and mobile application development
+            (Flutter, Android), and software engineering.
+          </p>
+          <p class="about-text reveal" data-i18n="about.paragraph2">
+            My academic and applied projects gave me hands-on experience in artificial intelligence, letting
+            me apply theoretical concepts to real problems. I bring a proactive, analytical and results-driven
+            mindset, foundational knowledge in information security, and a strong focus on teamwork, clear
+            communication and technical rigor — always aiming to contribute to impactful, collaborative projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-index">02.</span> <span data-i18n="skills.title">Skills</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-block reveal">
+            <h3 data-i18n="skills.programmingLanguages">Programming Languages</h3>
+            <ul class="bar-list">
+              <li><span class="bar-label">Python</span><span class="bar-track"><span class="bar-fill" style="--level:90%"></span></span></li>
+              <li><span class="bar-label">Java</span><span class="bar-track"><span class="bar-fill" style="--level:80%"></span></span></li>
+              <li><span class="bar-label">C / C++</span><span class="bar-track"><span class="bar-fill" style="--level:80%"></span></span></li>
+              <li><span class="bar-label">C#</span><span class="bar-track"><span class="bar-fill" style="--level:85%"></span></span></li>
+              <li><span class="bar-label">Flutter</span><span class="bar-track"><span class="bar-fill" style="--level:75%"></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-block reveal">
+            <h3 data-i18n="skills.toolsPlatforms">Tools &amp; Platforms</h3>
+            <div class="tag-cloud">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Azure DevOps</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Jira</span>
+              <span class="tag">Trello</span>
+              <span class="tag">RabbitMQ</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFT SKILLS -->
+    <section class="section" id="soft-skills">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-index">02.1</span> <span data-i18n="softSkills.heading">Soft Skills</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-block reveal">
+            <h3 data-i18n="softSkills.languagesHeading">Languages</h3>
+            <ul class="bar-list">
+              <li><span class="bar-label" data-i18n="softSkills.lang.pt">Portuguese</span><span class="bar-track"><span class="bar-fill" style="--level:100%"></span></span></li>
+              <li><span class="bar-label" data-i18n="softSkills.lang.en">English</span><span class="bar-track"><span class="bar-fill" style="--level:95%"></span></span></li>
+              <li><span class="bar-label" data-i18n="softSkills.lang.fr">French (Learning)</span><span class="bar-track"><span class="bar-fill" style="--level:25%"></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-block reveal">
+            <h3 data-i18n="softSkills.heading">Soft Skills</h3>
+            <div class="tag-cloud">
+              <span class="tag tag-accent" data-i18n="softSkills.tags.0">Logical &amp; analytical thinking</span>
+              <span class="tag tag-accent" data-i18n="softSkills.tags.1">Leadership</span>
+              <span class="tag tag-accent" data-i18n="softSkills.tags.2">Teamwork</span>
+              <span class="tag tag-accent" data-i18n="softSkills.tags.3">Continuous learning</span>
+              <span class="tag tag-accent" data-i18n="softSkills.tags.4">Creative thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-index">03.</span> <span data-i18n="experience.title">Experience</span></h2>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Feb. 2026 — Sept. 2026</span>
+              <h3 data-i18n="experience.jobs.0.role">Software Development Intern</h3>
+              <p class="timeline-company" data-i18n="experience.jobs.0.company">Localiza · Asset Regularization and Legal Team · Belo Horizonte, Brazil</p>
+              <ul>
+                <li data-i18n="experience.jobs.0.bullets.0">Developed and maintained back-end applications using C# and .NET Core.</li>
+                <li data-i18n="experience.jobs.0.bullets.1">Built and deployed applications with Docker and Kubernetes; managed workflows via Azure DevOps.</li>
+                <li data-i18n="experience.jobs.0.bullets.2">Applied Gitflow best practices and contributed to event-driven architectures using RabbitMQ and Event Sourcing.</li>
+                <li data-i18n="experience.jobs.0.bullets.3">Actively participated in agile ceremonies following the Scrum methodology.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Sep. 2025 — Dec. 2025</span>
+              <h3 data-i18n="experience.jobs.1.role">Software Development Intern</h3>
+              <p class="timeline-company" data-i18n="experience.jobs.1.company">Group Software · RHTECH Team · Belo Horizonte, Brazil</p>
+              <ul>
+                <li data-i18n="experience.jobs.1.bullets.0">Developed and maintained web and mobile applications for the Human Resources sector.</li>
+                <li data-i18n="experience.jobs.1.bullets.1">Implemented features, fixed bugs, tested, and monitored deployment cycles.</li>
+                <li data-i18n="experience.jobs.1.bullets.2">Collaborated with the team on continuous improvements in performance and usability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Apr. 2024 — Apr. 2025</span>
+              <h3 data-i18n="experience.jobs.2.role">Project Engineering Intern</h3>
+              <p class="timeline-company" data-i18n="experience.jobs.2.company">Century Telecom · Voice Corporate Team · Contagem, Brazil</p>
+              <ul>
+                <li data-i18n="experience.jobs.2.bullets.0">Implementation of voice systems including analog technologies, R2 Digital, and SIP PBX solutions.</li>
+                <li data-i18n="experience.jobs.2.bullets.1">Worked in the networking area using PHIPAM, SUMMIT, and Multi PuTTY Manager.</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="title-index">04.</span> <span data-i18n="education.title">Education</span></h2>
+
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <span class="edu-date">02/2023 — Expected 12/2027</span>
+            <h3 data-i18n="education.items.0.title">Bachelor's Degree in Computer Science</h3>
+            <p data-i18n="education.items.0.desc">Pontifical Catholic University of Minas Gerais — Morning Program · Belo Horizonte, Brazil</p>
+          </div>
+          <div class="edu-card reveal">
+            <span class="edu-date">09/2026 — 01/2027</span>
+            <h3 data-i18n="education.items.1.title">Exchange Program</h3>
+            <p data-i18n="education.items.1.desc">Epitech · Paris, France</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <ul class="contact-info">
+        <li><strong data-i18n="contact.phoneLabel">Phone</strong><a href="tel:+5531991005956">+55 (31) 99100-5956</a></li>
+        <li><strong data-i18n="contact.emailLabel">Email</strong><a href="mailto:caiodiniz200204@gmail.com">caiodiniz200204@gmail.com</a></li>
+        <li><strong data-i18n="contact.linkedinLabel">LinkedIn</strong><a href="https://linkedin.com/in/caiofdiniz" target="_blank" rel="noopener noreferrer">linkedin.com/in/caiofdiniz</a></li>
+        <li><strong data-i18n="contact.githubLabel">GitHub</strong><a href="https://github.com/CaioFD" target="_blank" rel="noopener noreferrer">github.com/CaioFD</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

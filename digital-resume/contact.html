@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Caio Faria Diniz</title>
+  <meta name="description" content="Get in touch with Caio Faria Diniz, Computer Science student and developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="progress-bar" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar" aria-label="Primary">
+      <a href="index.html#hero" class="logo">
+        <img src="assets/profile.jpg" alt="Caio Faria Diniz" class="logo-pic">
+        <span class="logo-name">Caio Diniz</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#hero" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="index.html#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="index.html#education" class="nav-link" data-i18n="nav.education">Education</a></li>
+        <li><a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language">PT</button>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <a href="assets/CV-CaioDiniz-EN.pdf" class="btn btn-ghost nav-cv-btn cv-download" download data-i18n="common.downloadCV">Download CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal" data-i18n="contact.title">Get in Touch</h2>
+        <p class="contact-intro reveal" data-i18n="contact.intro">
+          Open to new opportunities and collaborations. Feel free to reach out!
+        </p>
+
+        <div class="contact-grid">
+          <ul class="contact-info reveal">
+            <li><strong data-i18n="contact.phoneLabel">Phone</strong><a href="tel:+5531991005956">+55 (31) 99100-5956</a></li>
+            <li><strong data-i18n="contact.emailLabel">Email</strong><a href="mailto:caiodiniz200204@gmail.com">caiodiniz200204@gmail.com</a></li>
+            <li><strong data-i18n="contact.linkedinLabel">LinkedIn</strong><a href="https://linkedin.com/in/caiofdiniz" target="_blank" rel="noopener noreferrer">linkedin.com/in/caiofdiniz</a></li>
+            <li><strong data-i18n="contact.githubLabel">GitHub</strong><a href="https://github.com/CaioFD" target="_blank" rel="noopener noreferrer">github.com/CaioFD</a></li>
+          </ul>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="name" data-i18n="contact.form.name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required minlength="2" data-i18n-placeholder="contact.form.namePlaceholder">
+              <span class="form-error" data-error-for="name"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="email" data-i18n="contact.form.email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required data-i18n-placeholder="contact.form.emailPlaceholder">
+              <span class="form-error" data-error-for="email"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="subject" data-i18n="contact.form.subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" required minlength="3" data-i18n-placeholder="contact.form.subjectPlaceholder">
+              <span class="form-error" data-error-for="subject"></span>
+            </div>
+
+            <div class="form-row">
+              <label for="message" data-i18n="contact.form.message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..." required minlength="10" data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+              <span class="form-error" data-error-for="message"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              <span class="btn-text" data-i18n="contact.form.send">Send Message</span>
+            </button>
+
+            <p class="form-success" id="formSuccess" role="status" aria-live="polite" data-i18n="contact.form.success">
+              ✓ Thanks! Your message has been noted (demo form — no server attached).
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <ul class="contact-info">
+        <li><strong data-i18n="contact.phoneLabel">Phone</strong><a href="tel:+5531991005956">+55 (31) 99100-5956</a></li>
+        <li><strong data-i18n="contact.emailLabel">Email</strong><a href="mailto:caiodiniz200204@gmail.com">caiodiniz200204@gmail.com</a></li>
+        <li><strong data-i18n="contact.linkedinLabel">LinkedIn</strong><a href="https://linkedin.com/in/caiofdiniz" target="_blank" rel="noopener noreferrer">linkedin.com/in/caiofdiniz</a></li>
+        <li><strong data-i18n="contact.githubLabel">GitHub</strong><a href="https://github.com/CaioFD" target="_blank" rel="noopener noreferrer">github.com/CaioFD</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

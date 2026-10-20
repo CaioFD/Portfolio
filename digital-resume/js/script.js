@@ -98,7 +98,9 @@
           message: 'Message',
           messagePlaceholder: 'Your message...',
           send: 'Send Message',
-          success: '✓ Thanks! Your message has been noted (demo form — no server attached).'
+          sending: 'Sending...',
+          success: '✓ Thanks! Your message has been sent.',
+          error: 'Something went wrong. Please try again or email me directly.'
         },
         errors: {
           name: 'Please enter your full name.',
@@ -201,7 +203,9 @@
           message: 'Mensagem',
           messagePlaceholder: 'Sua mensagem...',
           send: 'Enviar Mensagem',
-          success: '✓ Obrigado! Sua mensagem foi registrada (formulário de demonstração — sem servidor conectado).'
+          sending: 'Enviando...',
+          success: '✓ Obrigado! Sua mensagem foi enviada.',
+          error: 'Algo deu errado. Tente novamente ou me envie um email diretamente.'
         },
         errors: {
           name: 'Por favor, informe seu nome completo.',
@@ -456,6 +460,14 @@
   const successMsg = document.getElementById('formSuccess');
 
   if (form) {
+    const EMAILJS_SERVICE_ID = 'service_0ka8kto';
+    const EMAILJS_TEMPLATE_ID = 'template_dj9qhxj';
+    const EMAILJS_PUBLIC_KEY = 'WWfcMwdLgkTVrn3Rp';
+    if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    const submitBtn = form.querySelector('.form-submit');
+    const btnText = submitBtn.querySelector('.btn-text');
+
     const validators = {
       name: (v) => v.trim().length >= 2 || CONTENT[currentLang].contact.errors.name,
       email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || CONTENT[currentLang].contact.errors.email,
@@ -484,16 +496,31 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      successMsg.classList.remove('visible');
+      successMsg.classList.remove('visible', 'error');
 
       const fields = [...form.querySelectorAll('input, textarea')];
       const allValid = fields.map(validateField).every(Boolean);
+      if (!allValid) return;
 
-      if (allValid) {
-        successMsg.classList.add('visible');
-        form.reset();
-        setTimeout(() => successMsg.classList.remove('visible'), 5000);
-      }
+      submitBtn.disabled = true;
+      btnText.textContent = CONTENT[currentLang].contact.form.sending;
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form).then(
+        () => {
+          successMsg.textContent = CONTENT[currentLang].contact.form.success;
+          successMsg.classList.add('visible');
+          form.reset();
+          setTimeout(() => successMsg.classList.remove('visible'), 5000);
+        },
+        (err) => {
+          console.error('EmailJS send failed:', err);
+          successMsg.textContent = CONTENT[currentLang].contact.form.error;
+          successMsg.classList.add('visible', 'error');
+        }
+      ).finally(() => {
+        submitBtn.disabled = false;
+        btnText.textContent = CONTENT[currentLang].contact.form.send;
+      });
     });
   }
 })();

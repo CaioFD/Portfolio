@@ -766,6 +766,9 @@ h1, h2, h3 {
 .form-success.visible {
   display: block;
 }
+.form-success.error {
+  color: var(--accent-2);
+}
 
 /* ======= Footer ======= */
 .site-footer {

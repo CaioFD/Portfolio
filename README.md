@@ -1,97 +1,121 @@
-# Caio Diniz — Portfolio
+# Caio Diniz — Digital Resume
 
-[![Angular](https://img.shields.io/badge/Angular-22-DD0031?logo=angular&logoColor=white)](https://angular.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com)
-[![License](https://img.shields.io/badge/license-MIT-blue)](#license)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![EmailJS](https://img.shields.io/badge/EmailJS-contact%20form-FF7139)](https://www.emailjs.com/)
+[![No build step](https://img.shields.io/badge/build-none-brightgreen)](#-getting-started)
 
-My personal portfolio, a fast, bilingual, single-page site built with Angular's
-standalone components and signals. No frameworks on top of frameworks, no CMS,
-no bloat: just a clean build that ships straight to Vercel on every push to `main`.
+My digital resume: a bilingual, two-page static site in plain HTML, CSS and
+JavaScript. No framework, no bundler, no `node_modules` — open `index.html`
+and it runs. One `<script>` tag drives the whole thing.
 
 ## ✨ Highlights
 
-- 🌎 **EN/PT language toggle** — built with Angular signals, remembers your
-  choice via `localStorage` ([`language.service.ts`](portfolio-angular/src/app/core/i18n/language.service.ts)).
-- ⚡ **Standalone Angular 22** — no `NgModule` ceremony, lean component tree.
-- 📬 **Working contact form** — sends real emails via [EmailJS](https://www.emailjs.com/), no backend required.
-- 🧩 **Six focused sections** — Home, Experience, Projects, Technical Skills, Education, Contact.
-- 📱 **Responsive by default** — looks right from phone to ultrawide.
-- 🚀 **Zero-touch deploys** — merge to `main`, Vercel does the rest.
+- 🌎 **EN/PT toggle** — every string lives in a single `CONTENT` object in
+  [`script.js`](digital-resume/js/script.js); `data-i18n` attributes get swapped
+  on click and the choice is remembered in `localStorage`. The CV download link
+  follows the language too (EN or PT PDF).
+- 🌓 **Dark / light theme** — CSS custom properties redefined under
+  `:root[data-theme="light"]`, toggled and persisted in `localStorage`.
+  Dark is the default.
+- ⌨️ **Typed hero** — role and location cycle with a typewriter effect, and
+  restart in the new language when you flip the toggle.
+- 📈 **Scroll feedback** — a top progress bar, `IntersectionObserver` reveal
+  animations, animated skill bars and nav links that highlight the section
+  you're in.
+- 📬 **Working contact form** — client-side validation per field (on blur and
+  on input) plus real email delivery through [EmailJS](https://www.emailjs.com/),
+  with no backend. Error messages are translated as well.
+- ♿ **Accessible by default** — skip link, `aria-expanded` on the menu toggle,
+  `aria-label`s on icon buttons, `role="status"` on the form feedback, and a
+  `prefers-reduced-motion` block that cuts animations.
+- 📱 **Responsive** — breakpoints at 860 / 720 / 480 / 400 px, hamburger menu
+  on small screens.
 
 ## 🗂️ Structure
 
 ```
 Portfolio/
-└── portfolio-angular/           # The entire site — one Angular app
-    ├── public/                   # Static assets (favicon, images, etc.)
-    ├── src/
-    │   ├── app/
-    │   │   ├── core/
-    │   │   │   └── i18n/         # Language service (EN/PT toggle)
-    │   │   ├── pages/            # One folder per route
-    │   │   │   ├── home/
-    │   │   │   ├── experience/
-    │   │   │   ├── projects/
-    │   │   │   ├── technical-skills/
-    │   │   │   ├── education/
-    │   │   │   └── contact/      # EmailJS-powered contact form
-    │   │   └── shared/           # Reusable building blocks
-    │   │       ├── header/
-    │   │       ├── footer/
-    │   │       ├── info-card/
-    │   │       └── skill-card/
-    │   ├── index.html
-    │   └── main.ts
-    ├── angular.json
-    ├── package.json
-    └── vercel.json                # SPA rewrite rules for Vercel
+├── README.md
+└── digital-resume/               # The whole site
+    ├── index.html                # Hero, About, Skills, Soft Skills,
+    │                             # Experience, Projects, Education
+    ├── contact.html              # Contact page + EmailJS form
+    ├── css/
+    │   ├── reset.css             # Normalize + prefers-reduced-motion
+    │   └── style.css             # Design tokens and every component
+    ├── js/
+    │   └── script.js             # i18n, theme, nav, typed effect,
+    │                             # reveals, form validation, EmailJS
+    ├── assets/
+    │   ├── profile.jpg
+    │   ├── CV-CaioDiniz-EN.pdf
+    │   └── CV-CaioDiniz-PT.pdf
+    └── Portfolio.code-workspace  # VS Code workspace (Live Server)
 ```
 
-Every component keeps the same three-file shape: `*.ts` (logic), `*.html`
-(template), `*.css` (styles) — no surprises, easy to navigate.
+Three files hold all the behaviour and style: `style.css` for looks,
+`script.js` for logic, `reset.css` for the baseline. Both pages share the same
+header, footer and script.
 
 ## 🛠️ Tech stack
 
-| Layer      | Choice                                      |
-| ---------- | -------------------------------------------- |
-| Framework  | Angular 22 (standalone components, signals) |
-| Language   | TypeScript                                   |
-| Forms/mail | `@emailjs/browser`                           |
-| Testing    | Vitest                                       |
-| Hosting    | Vercel                                       |
+| Layer      | Choice                                             |
+| ---------- | -------------------------------------------------- |
+| Markup     | HTML5, semantic sections                           |
+| Styling    | Plain CSS with custom properties (design tokens)   |
+| Behaviour  | Vanilla JS (ES2020), one IIFE, no dependencies     |
+| Mail       | `@emailjs/browser` 4.3.3 via CDN (contact page)    |
+| Fonts      | Space Grotesk + Inter (Google Fonts)               |
+| Build      | None                                               |
 
 ## 🚀 Getting started
 
 ```bash
-cd portfolio-angular
-npm install
-npm start
+git clone https://github.com/CaioFD/Portfolio.git
+cd Portfolio/digital-resume
 ```
 
-Then open `http://localhost:4200` — the app hot-reloads on every save.
+Then either:
 
-Run the test suite with:
+- **Open `index.html` directly** in a browser — everything works, including the
+  language and theme toggles.
+- **Serve it** for a nicer dev loop (live reload, clean URLs):
 
-```bash
-npm test
-```
+  ```bash
+  npx serve .          # or: python -m http.server 8000
+  ```
 
-## 📦 Publication process
+  In VS Code, open `Portfolio.code-workspace` and hit *Go Live*
+  (Live Server extension) — the workspace already points at this folder.
 
-The site auto-deploys to **[Vercel](https://vercel.com)**. Every push to
-`main` triggers a fresh build and goes live — no manual steps, no CI scripts
-to babysit:
+## ⚙️ Configuration
 
-```bash
-npm run build
-```
+Everything configurable sits at the top of its own block in
+[`script.js`](digital-resume/js/script.js):
 
-- Output goes to `portfolio-angular/dist/portfolio-angular`.
-- `vercel.json` rewrites every route to `index.html`, so client-side routing
-  (Angular Router) survives page refreshes and direct links.
-- Previews: Vercel also builds a preview deployment for every pull request,
-  so changes can be reviewed live before merging.
+| What                | Where                                                  |
+| ------------------- | ------------------------------------------------------ |
+| All copy (EN + PT)  | the `CONTENT` object                                   |
+| CV file paths       | `CV_PATHS`                                             |
+| EmailJS credentials | `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PUBLIC_KEY` |
+| Colors, radii, fonts| `:root` tokens in [`style.css`](digital-resume/css/style.css) |
+
+To point the form at your own inbox, create a service and a template on EmailJS
+and replace those three identifiers. They are public by design (EmailJS keys are
+meant to live in the browser), so there is no secret to leak — but do set the
+template's allowed domains in the EmailJS dashboard.
+
+Adding a section means: markup in `index.html` with `data-i18n` keys, the
+matching keys under both `en` and `pt` in `CONTENT`, and a nav link. Styling
+reuses the existing `.section`, `.timeline` and `.skill-block` classes.
+
+## 📦 Publication
+
+Static files, so any host works — GitHub Pages, Netlify, Vercel, Cloudflare
+Pages, or plain nginx. Point it at `digital-resume/` as the publish directory;
+there is no build command and no output folder to configure.
 
 ## 📄 License
 

@@ -6,7 +6,7 @@
 
   const CONTENT = {
     en: {
-      nav: { home: 'Home', about: 'About', skills: 'Skills', experience: 'Experience', education: 'Education', contact: 'Contact' },
+      nav: { home: 'Home', about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', education: 'Education', contact: 'Contact' },
       common: { downloadCV: 'Download CV', getInTouch: 'Get in touch' },
       hero: {
         eyebrow: "Hello, I'm",
@@ -57,6 +57,23 @@
           }
         ]
       },
+      projects: {
+        title: 'Projects',
+        items: [
+          {
+            role: 'Undergraduate Research Project',
+            company: 'Sólides · Part-time · Belo Horizonte, MG — Brazil (Remote)',
+            bullets: [
+              'Developed an intelligent agent for the automatic extraction and validation of medical certificates.',
+              'Applied Artificial Intelligence techniques using Python.',
+              'Participated in all project phases: problem analysis, solution design, implementation, and validation.',
+              'Built document processing pipelines for data extraction and automation.',
+              'Explored information extraction, data reliability, and process automation techniques.',
+              'Strengthened skills in applied research, critical analysis, and technical communication.'
+            ]
+          }
+        ]
+      },
       education: {
         title: 'Education',
         items: [
@@ -92,7 +109,7 @@
       }
     },
     pt: {
-      nav: { home: 'Início', about: 'Sobre', skills: 'Habilidades', experience: 'Experiência', education: 'Educação', contact: 'Contato' },
+      nav: { home: 'Início', about: 'Sobre', skills: 'Habilidades', experience: 'Experiência', projects: 'Projetos', education: 'Educação', contact: 'Contato' },
       common: { downloadCV: 'Baixar CV', getInTouch: 'Entre em contato' },
       hero: {
         eyebrow: 'Olá, eu sou',
@@ -139,6 +156,23 @@
             bullets: [
               'Implementação de sistemas de voz incluindo tecnologias analógicas, R2 Digital e soluções SIP PBX.',
               'Atuou na área de redes utilizando PHIPAM, SUMMIT e Multi PuTTY Manager.'
+            ]
+          }
+        ]
+      },
+      projects: {
+        title: 'Projetos',
+        items: [
+          {
+            role: 'Projeto de Iniciação Científica',
+            company: 'Sólides · Meio período · Belo Horizonte, MG — Brasil (Remoto)',
+            bullets: [
+              'Desenvolveu um agente inteligente para extração e validação automática de atestados médicos.',
+              'Aplicou técnicas de Inteligência Artificial usando Python.',
+              'Participou de todas as fases do projeto: análise do problema, design da solução, implementação e validação.',
+              'Construiu pipelines de processamento de documentos para extração de dados e automação.',
+              'Explorou técnicas de extração de informação, confiabilidade de dados e automação de processos.',
+              'Fortaleceu habilidades em pesquisa aplicada, análise crítica e comunicação técnica.'
             ]
           }
         ]
@@ -290,6 +324,7 @@
     sections.forEach((section) => {
       if (probe >= section.offsetTop) currentId = section.id;
     });
+    if (currentId === 'soft-skills') currentId = 'skills';
     navLinks.forEach((link) => {
       link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
     });

@@ -71,6 +71,17 @@
               'Explored information extraction, data reliability, and process automation techniques.',
               'Strengthened skills in applied research, critical analysis, and technical communication.'
             ]
+          },
+          {
+            role: 'Mammographic Image Segmentation & Classification — Group Project',
+            company: 'PUC Minas · Image Processing and Analysis Course · Belo Horizonte, Brazil',
+            bullets: [
+              'Built a Tkinter desktop application for mammographic image segmentation and binary/4-class classification.',
+              'Implemented automatic segmentation using Otsu thresholding, morphological operations, and largest-component extraction.',
+              'Applied data augmentation via image rotations and trained ResNet-18 and EfficientNet-B0 classifiers with PyTorch.',
+              'Added Grad-CAM visualization to interpret model predictions.',
+              'Collaborated with a team to deliver the required metrics, image visualization/zoom tools, and end-to-end training and testing workflows.'
+            ]
           }
         ]
       },
@@ -175,6 +186,17 @@
               'Construiu pipelines de processamento de documentos para extração de dados e automação.',
               'Explorou técnicas de extração de informação, confiabilidade de dados e automação de processos.',
               'Fortaleceu habilidades em pesquisa aplicada, análise crítica e comunicação técnica.'
+            ]
+          },
+          {
+            role: 'Segmentação e Classificação de Imagens Mamográficas — Projeto em Grupo',
+            company: 'PUC Minas · Disciplina de Processamento e Análise de Imagens · Belo Horizonte, Brasil',
+            bullets: [
+              'Desenvolveu uma aplicação desktop em Tkinter para segmentação e classificação (binária e 4 classes) de imagens mamográficas.',
+              'Implementou segmentação automática usando limiarização de Otsu, operações morfológicas e extração do maior componente.',
+              'Aplicou data augmentation por rotações de imagem e treinou classificadores ResNet-18 e EfficientNet-B0 com PyTorch.',
+              'Adicionou visualização Grad-CAM para interpretar as predições do modelo.',
+              'Colaborou com a equipe na entrega das métricas exigidas, ferramentas de visualização/zoom de imagens e fluxos completos de treino e teste.'
             ]
           }
         ]

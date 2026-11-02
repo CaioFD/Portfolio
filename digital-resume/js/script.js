@@ -8,15 +8,26 @@
     en: {
       nav: { home: 'Home', about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', education: 'Education', contact: 'Contact' },
       common: { downloadCV: 'Download CV', getInTouch: 'Get in touch' },
+      seo: {
+        home: {
+          title: 'Caio Faria Diniz | Computer Science Student & Software Developer',
+          description: 'Portfolio of Caio Faria Diniz, a Belo Horizonte Computer Science student and software developer. Explore projects, experience, and technical skills.'
+        },
+        contact: {
+          title: 'Contact Caio Faria Diniz | Portfolio',
+          description: 'Contact Caio Faria Diniz about software development opportunities, collaborations, or projects.'
+        }
+      },
       hero: {
         eyebrow: "Hello, I'm",
+        tagline: 'Think. Build. Evolve.',
         roles: ['Computer Science Student', 'Full-Stack Developer', 'Software Engineer', 'AI & Cybersecurity Enthusiast'],
         locations: ['Belo Horizonte, MG — Brazil', 'Paris, France']
       },
       about: {
         title: 'About Me',
         paragraph1: 'Computer Science student with a strong interest in technology, innovation, and the development of intelligent and scalable solutions. Solid programming skills in Python, Java, C, C# and C++, with experience in full-stack development, web and mobile application development (Flutter, Android), and software engineering.',
-        paragraph2: 'My academic and applied projects gave me hands-on experience in artificial intelligence, letting me apply theoretical concepts to real problems. I bring a proactive, analytical and results-driven mindset, foundational knowledge in information security, and a strong focus on teamwork, clear communication and technical rigor — always aiming to contribute to impactful, collaborative projects.'
+        paragraph2: 'My academic and applied projects gave me hands-on experience in artificial intelligence, letting me apply theoretical concepts to real problems. I bring a proactive, analytical and results-driven mindset, foundational knowledge in information security, and a strong focus on teamwork, clear communication and technical rigor, always aiming to contribute to impactful, collaborative projects.'
       },
       skills: { title: 'Skills', programmingLanguages: 'Programming Languages', toolsPlatforms: 'Tools & Platforms' },
       softSkills: {
@@ -124,15 +135,26 @@
     pt: {
       nav: { home: 'Início', about: 'Sobre', skills: 'Habilidades', experience: 'Experiência', projects: 'Projetos', education: 'Educação', contact: 'Contato' },
       common: { downloadCV: 'Baixar CV', getInTouch: 'Entre em contato' },
+      seo: {
+        home: {
+          title: 'Caio Faria Diniz | Estudante de Ciência da Computação e Desenvolvedor',
+          description: 'Portfólio de Caio Faria Diniz, estudante de Ciência da Computação e desenvolvedor em Belo Horizonte. Conheça projetos, experiência e habilidades técnicas.'
+        },
+        contact: {
+          title: 'Entre em contato com Caio Faria Diniz | Portfólio',
+          description: 'Entre em contato com Caio Faria Diniz para conversar sobre oportunidades de desenvolvimento de software, colaborações ou projetos.'
+        }
+      },
       hero: {
         eyebrow: 'Olá, eu sou',
+        tagline: 'Pense. Construa. Evolua.',
         roles: ['Estudante de Ciência da Computação', 'Desenvolvedor Full-Stack', 'Engenheiro de Software', 'Entusiasta de IA e Cibersegurança'],
         locations: ['Belo Horizonte, MG — Brasil', 'Paris, França']
       },
       about: {
         title: 'Sobre Mim',
         paragraph1: 'Estudante de Ciência da Computação com forte interesse em tecnologia, inovação e desenvolvimento de soluções inteligentes e escaláveis. Sólidos conhecimentos de programação em Python, Java, C, C# e C++, com experiência em desenvolvimento full-stack, aplicações web e mobile (Flutter, Android) e engenharia de software.',
-        paragraph2: 'Meus projetos acadêmicos e aplicados me deram experiência prática em inteligência artificial, permitindo aplicar conceitos teóricos a problemas reais. Tenho um perfil proativo, analítico e orientado a resultados, conhecimento fundamental em segurança da informação e forte foco em trabalho em equipe, comunicação clara e rigor técnico — sempre buscando contribuir com projetos impactantes e colaborativos.'
+        paragraph2: 'Meus projetos acadêmicos e aplicados me deram experiência prática em inteligência artificial, permitindo aplicar conceitos teóricos a problemas reais. Tenho um perfil proativo, analítico e orientado a resultados, conhecimento fundamental em segurança da informação e forte foco em trabalho em equipe, comunicação clara e rigor técnico, sempre buscando contribuir com projetos impactantes e colaborativos.'
       },
       skills: { title: 'Skills', programmingLanguages: 'Linguagens de Programação', toolsPlatforms: 'Ferramentas e Plataformas' },
       softSkills: {
@@ -264,7 +286,15 @@
 
   const applyTranslations = () => {
     const dict = CONTENT[currentLang];
+    const metadata = dict.seo[document.body.dataset.page];
     document.documentElement.lang = currentLang;
+    document.title = metadata.title;
+    document.querySelector('meta[name="description"]').content = metadata.description;
+    document.querySelector('meta[property="og:title"]').content = metadata.title;
+    document.querySelector('meta[property="og:description"]').content = metadata.description;
+    document.querySelector('meta[property="og:locale"]').content = currentLang === 'en' ? 'en_US' : 'pt_BR';
+    document.querySelector('meta[name="twitter:title"]').content = metadata.title;
+    document.querySelector('meta[name="twitter:description"]').content = metadata.description;
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const value = getPath(dict, el.dataset.i18n);

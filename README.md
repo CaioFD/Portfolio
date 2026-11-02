@@ -12,30 +12,13 @@ and it runs. One `<script>` tag drives the whole thing.
 
 ## ✨ Highlights
 
-- 🌎 **EN/PT toggle** — every string lives in a single `CONTENT` object in
-  [`script.js`](digital-resume/js/script.js); `data-i18n` attributes get swapped
-  on click and the choice is remembered in `localStorage`. The CV download link
-  follows the language too (EN or PT PDF).
-- 🔎 **SEO foundations** — localized page titles and descriptions, social sharing
-  metadata, canonical URLs, semantic headings, image alt text and dimensions,
-  plus JSON-LD structured data and a sitemap. `hreflang` is not set because
-  English and Portuguese currently share the same page URLs.
-- 🌓 **Dark / light theme** — CSS custom properties redefined under
-  `:root[data-theme="light"]`, toggled and persisted in `localStorage`.
-  Dark is the default.
-- ⌨️ **Typed hero** — role and location cycle with a typewriter effect, and
-  restart in the new language when you flip the toggle.
-- 📈 **Scroll feedback** — a top progress bar, `IntersectionObserver` reveal
-  animations, animated skill bars and nav links that highlight the section
-  you're in.
-- 📬 **Working contact form** — client-side validation per field (on blur and
-  on input) plus real email delivery through [EmailJS](https://www.emailjs.com/),
-  with no backend. Error messages are translated as well.
-- ♿ **Accessible by default** — skip link, `aria-expanded` on the menu toggle,
-  `aria-label`s on icon buttons, `role="status"` on the form feedback, and a
-  `prefers-reduced-motion` block that cuts animations.
-- 📱 **Responsive** — breakpoints at 860 / 720 / 480 / 400 px, hamburger menu
-  on small screens.
+- 🌎 **EN/PT language toggle** — built with Angular signals, remembers your
+  choice via `localStorage` ([`language.service.ts`](portfolio-angular/src/app/core/i18n/language.service.ts)).
+- ⚡ **Standalone Angular 22** — no `NgModule` ceremony, lean component tree.
+- 📬 **Working contact form** — sends real emails via [EmailJS](https://www.emailjs.com/), no backend required.
+- 🧩 **Six focused sections** — Home, Experience, Projects, Technical Skills, Education, Contact.
+- 📱 **Responsive by default** — looks right from phone to ultrawide.
+- 🚀 **Zero-touch deploys** — merge to `main`, Vercel does the rest.
 
 ## 🗂️ Structure
 
